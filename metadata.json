@@ -1,0 +1,5 @@
+{
+  "name": "Strategia AI - Conquête de Royaume",
+  "description": "Un jeu de stratégie simple au tour par tour où vous devez conquérir des territoires contre une IA alimentée par Gemini.",
+  "requestFramePermissions": []
+}

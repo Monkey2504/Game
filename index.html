@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Strategia AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Inter:wght@400;600;700&display=swap');
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #020617; /* Slate 950 */
+        color: #e2e8f0;
+        min-height: 100vh;
+        /* Mobile: Prevent pull-to-refresh */
+        overscroll-behavior-y: none;
+        touch-action: manipulation;
+        /* Starry background effect */
+        background-image: 
+          radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+          radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+          radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px),
+          radial-gradient(circle at 50% 100%, #1e1b4b 0%, #020617 50%);
+        background-size: 550px 550px, 350px 350px, 250px 250px, 100% 100%;
+        background-position: 0 0, 40px 60px, 130px 270px, 0 0;
+      }
+      
+      h1, h2, h3, .fantasy-font {
+        font-family: 'MedievalSharp', cursive;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475569; 
+      }
+
+      /* Animations Fun */
+      @keyframes teleport {
+        0% { transform: scale(1); opacity: 1; filter: blur(0px); }
+        50% { transform: scale(0.8); opacity: 0.5; filter: blur(4px); }
+        100% { transform: scale(1); opacity: 1; filter: blur(0px); }
+      }
+
+      .animate-teleport {
+        animation: teleport 0.5s ease-in-out;
+      }
+
+      /* Combat Animations */
+      @keyframes clash {
+        0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+        20% { transform: scale(1.5) rotate(0deg); opacity: 1; }
+        40% { transform: scale(1.2) rotate(10deg); }
+        60% { transform: scale(1.2) rotate(-10deg); }
+        100% { transform: scale(0) rotate(0deg); opacity: 0; }
+      }
+      
+      .animate-clash {
+        animation: clash 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+
+      @keyframes float-up {
+        0% { transform: translateY(0) scale(0.5); opacity: 0; }
+        20% { transform: translateY(-10px) scale(1.2); opacity: 1; }
+        100% { transform: translateY(-40px) scale(1); opacity: 0; }
+      }
+
+      .animate-float-up {
+        animation: float-up 0.8s ease-out forwards;
+      }
+
+      @keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+      
+      .animate-shake {
+        animation: shake 0.5s;
+      }
+
+      .text-shadow-glow {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      }
+      
+      .text-outline-red {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
